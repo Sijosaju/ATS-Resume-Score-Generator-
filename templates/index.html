@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ATS Resume Score Checker</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="/static/styles.css" rel="stylesheet" />
+  <style>
+    /* Simple modal styles for improvement tips */
+    #tipsModal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    #tipsModal .modal-content {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 8px;
+      max-width: 600px;
+      width: 90%;
+      max-height: 80%;
+      overflow-y: auto;
+    }
+    #tipsModal .close-btn {
+      float: right;
+      cursor: pointer;
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>ATS Resume Score Checker</h1>
+      <p>Optimize your resume for Applicant Tracking Systems and increase your chances of getting interviews</p>
+    </header>
+
+    <div class="card">
+      <div class="card-header">
+        Upload Your Resume
+      </div>
+      <div class="card-body">
+        <div class="upload-area" id="uploadArea">
+          <i class="fas fa-file-upload"></i>
+          <h3>Drag & Drop Your Resume</h3>
+          <p>or click to browse files (PDF, DOCX, or TXT)</p>
+          <input type="file" id="fileInput" style="display: none;" accept=".pdf,.docx,.txt" />
+          <button class="btn">Upload Resume</button>
+        </div>
+
+        <div class="job-description">
+          <div class="form-group">
+            <label for="jobDescription">Job Description (paste to improve matching accuracy)</label>
+            <textarea id="jobDescription" placeholder="Paste the job description here to get a more accurate ATS match score..."></textarea>
+          </div>
+
+          <button class="btn" id="analyzeBtn">Analyze Resume</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="results" id="resultsSection" style="display:none;">
+      <div class="card">
+        <div class="card-header">
+          ATS Compatibility Score
+        </div>
+        <div class="card-body">
+          <div class="score-card">
+            <div class="score-circle">
+              <div class="score-value">85%</div>
+            </div>
+            <h3>Your resume is ATS-friendly!</h3>
+            <p>Your resume is well-optimized for most Applicant Tracking Systems, but there's room for improvement.</p>
+          </div>
+
+          <div class="feedback-list">
+            <h3>Feedback & Suggestions</h3>
+            <!-- Feedback items will be injected here -->
+          </div>
+
+          <div class="skill-match">
+            <h3>Key Skills Match</h3>
+            <!-- Skill items will be injected here -->
+          </div>
+
+          <div style="margin-top: 2rem; text-align: center;">
+            <button class="btn" id="downloadReportBtn">Download Report</button>
+            <button class="btn btn-outline" id="improvementTipsBtn" style="margin-left: 1rem;">Get Improvement Tips</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 ATS Resume Score Checker | Optimize your resume for better job opportunities</p>
+  </footer>
+
+  <!-- Modal for Improvement Tips -->
+  <div id="tipsModal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h3>Improvement Tips</h3>
+      <div id="tipsContent"></div>
+    </div>
+  </div>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
