@@ -27,8 +27,8 @@ This Flask-based application analyzes resumes for Applicant Tracking System (ATS
 
 1.  **Clone the repository:**
     ```bash
-    git clone <repository_url>
-    cd <repository_name>
+    git clone https://github.com/Sijosaju/ATS-Resume-Score-Generator-.git
+    cd ATS-Resume-Score-Generator
     ```
 2.  **Create a virtual environment (recommended):**
     ```bash
